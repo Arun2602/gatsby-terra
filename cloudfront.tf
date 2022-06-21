@@ -41,9 +41,9 @@ resource "aws_cloudfront_distribution" "cloudfront" {
     }
 
     viewer_protocol_policy = "redirect-to-https"
-    default_ttl            = var.default_ttl
-    compress               = true
-    smooth_streaming       = false
+    min_ttl                = 60
+    default_ttl            = 90
+    max_ttl                = 300
   }
 
   restrictions {
